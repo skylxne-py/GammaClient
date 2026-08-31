@@ -1,0 +1,18 @@
+{
+  "server": "example.server.net",
+  "dimension": "minecraft:overworld",
+  "chunkX": 512,
+  "chunkZ": -128,
+  "loadTimeMillis": 1000,
+  "requestLatencyMillis": 1800,
+  "packetSizeBytes": 42000,
+  "lightCoverageSignal": 70,
+  "paletteEntropy": 0.62,
+  "fluidUpdateCount": 14,
+  "totalUpdateCount": 28,
+  "unrolledLootContainers": 3,
+  "totalContainers": 3,
+  "blockEntityCounts": {"chest": 2, "hopper": 1},
+  "notableBlockCounts": {"minecraft:diamond_ore": 4},
+  "contentHash": 0
+}

@@ -1,0 +1,37 @@
+{
+	"required": true,
+	"package": "dev.gamma.mixin",
+	"compatibilityLevel": "JAVA_25",
+	"client": [
+		"core.ConnectionMixin",
+		"core.MinecraftUserMixin",
+		"misc.ContainerScreenSpoofMixin",
+		"misc.ItemDecorationsMixin",
+		"misc.ExperienceBarSpoofMixin",
+		"misc.HudSpoofMixin",
+		"misc.ItemStackTooltipImageMixin",
+		"misc.PlayerNameMixin",
+		"misc.ServerNameResolverMixin",
+		"render.CameraMixin",
+		"render.FogRendererAccessor",
+		"render.FogRendererMixin",
+		"render.GameRendererFogAccessor",
+		"render.GameRendererMixin",
+		"render.LevelRendererGizmoFogMixin",
+		"render.HumanoidArmorLayerMixin",
+		"render.ItemEntityMixin",
+		"render.ItemInHandRendererMixin",
+		"render.KeyboardInputMixin",
+		"render.LocalPlayerMixin",
+		"render.LightmapRenderStateExtractorMixin",
+		"render.MobEffectFogEnvironmentMixin",
+		"render.MouseHandlerMixin",
+		"render.RenderSectionRegionMixin",
+		"render.ScreenEffectRendererMixin",
+		"render.TotemParticleMixin",
+		"render.WeatherEffectRendererMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}

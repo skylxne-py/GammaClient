@@ -1,0 +1,49 @@
+# gradle
+.gradle/
+build/
+out/
+
+# eclipse
+*.launch
+
+# idea
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# vscode
+.vscode/
+.classpath
+.project
+.settings/
+
+# fabric
+run/
+
+# os
+.DS_Store
+Thumbs.db
+
+# local agent config
+.claude/
+
+# personal notes, not part of the project
+ISSUES.txt
+
+# crash reports carry the local username, absolute paths and system details
+crash-*.txt
+hs_err_pid*.log
+replay_pid*.log
+
+# internal working docs -- kept locally, not published
+CLAUDE.md
+docs/DECISIONS.md
+docs/ROADMAP.md
+docs/ACCOUNT_SWITCHER.md
+docs/PORTING.md
+
+# source artwork; the shipped copies live in src/main/resources/assets/gamma/
+GammaClient_logo.png
+GammaClient_logo.svg
+mod_menu_icon.png

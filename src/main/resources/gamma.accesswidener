@@ -1,0 +1,14 @@
+accessWidener v2 official
+
+# AutoSign fills the sign editor's own text buffer rather than simulating keystrokes into it. The
+# buffer is what removed() reads to build ServerboundSignUpdatePacket, so writing it directly is
+# writing exactly what vanilla would have sent -- there is no separate "our text" path to get out of
+# step with the packet. `text` and `sign` are also needed so the on-screen preview matches the
+# buffer; without them the screen would show a blank sign and then send four filled lines.
+#
+# Widened rather than mixed into because there is no behaviour to change here, only fields to read.
+# A mixin would be four @Accessor methods saying the same thing at more cost.
+accessible field net/minecraft/client/gui/screens/inventory/AbstractSignEditScreen messages [Ljava/lang/String;
+accessible field net/minecraft/client/gui/screens/inventory/AbstractSignEditScreen text Lnet/minecraft/world/level/block/entity/SignText;
+accessible field net/minecraft/client/gui/screens/inventory/AbstractSignEditScreen sign Lnet/minecraft/world/level/block/entity/SignBlockEntity;
+accessible field net/minecraft/client/gui/screens/inventory/AbstractSignEditScreen isFrontText Z

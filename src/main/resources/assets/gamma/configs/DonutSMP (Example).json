@@ -1,0 +1,140 @@
+{
+  "version": 4,
+  "serverAddress": "donutsmp.net",
+  "modules": {
+    "EntityESP": { "enabled": false, "settings": {} },
+    "PlayerESP": {
+      "enabled": true,
+      "settings": {
+        "Color": -11154177,
+        "Mode": "BOTH",
+        "Pass": "BOTH",
+        "MaxDistance": 1024.0,
+        "MaxHeight": 320,
+        "DistanceFade": true,
+        "Toast": true,
+        "Nametags": true,
+        "ShowHealth": true,
+        "ShowDistance": true,
+        "ShowHeldItem": true,
+        "ShowArmor": true,
+        "ShowPing": false,
+        "AlwaysLegible": true,
+        "SeeThrough": true
+      }
+    },
+    "ItemESP": { "enabled": false, "settings": {} },
+    "StorageESP": {
+      "enabled": true,
+      "settings": {
+        "MaxDistance": 1024.0,
+        "MaxHeight": 320,
+        "Mode": "BOTH",
+        "Chests": true,
+        "EnderChests": true,
+        "Barrels": true,
+        "ShulkerBoxes": true,
+        "Hoppers": true,
+        "Furnaces": true,
+        "DroppersAndDispensers": true
+      }
+    },
+    "BlockESP": { "enabled": false, "settings": {} },
+    "LogoutSpots": { "enabled": false, "settings": {} },
+    "Breadcrumbs": { "enabled": false, "settings": {} },
+
+    "Xray": { "enabled": false, "settings": {} },
+    "Fullbright": { "enabled": true, "settings": {} },
+    "NoRender": {
+      "enabled": true,
+      "settings": {
+        "Fog": false,
+        "Weather": false,
+        "Rain": false,
+        "Snow": false,
+        "FireOverlay": false,
+        "WaterOverlay": false,
+        "BlockOverlay": false,
+        "PumpkinOverlay": false,
+        "HurtCam": false,
+        "ViewBobbing": false,
+        "Nausea": false,
+        "Darkness": false,
+        "Blindness": false,
+        "PortalOverlay": false,
+        "TotemAnimation": false,
+        "Armor": false,
+        "ItemSpin": false
+      }
+    },
+    "Ambience": { "enabled": false, "settings": {} },
+    "Zoom": { "enabled": false, "settings": {} },
+    "Freecam": { "enabled": false, "settings": {} },
+    "Freelook": { "enabled": false, "settings": {} },
+    "ViewModel": { "enabled": false, "settings": {} },
+    "BlockHighlight": { "enabled": false, "settings": {} },
+    "Trajectories": { "enabled": false, "settings": {} },
+    "Chams": { "enabled": false, "settings": {} },
+    "Tracers": { "enabled": false, "settings": {} },
+    "NameTag": {
+      "enabled": true,
+      "settings": {
+        "Text": "Gamma",
+        "Style": "ARROWS"
+      }
+    },
+
+    "AutoReconnect": { "enabled": false, "settings": {} },
+    "AutoSign": { "enabled": false, "settings": {} },
+    "BetterTooltips": { "enabled": true, "settings": {} },
+    "NameProtect": { "enabled": true, "settings": {} },
+    "DiscordRPC": { "enabled": false, "settings": {} },
+    "FakeCoordinates": {
+      "enabled": true,
+      "settings": {
+        "FollowMovement": true,
+        "RealHeight": true
+      }
+    },
+    "ScoreboardEditor": { "enabled": false, "settings": {} },
+    "Spotify": { "enabled": false, "settings": {} },
+
+    "NewChunks": { "enabled": false, "settings": {} },
+
+    "Waypoints": { "enabled": true, "settings": {} },
+    "StashFinder": { "enabled": true, "settings": {} },
+
+    "SusChunkFinder": {
+      "enabled": true,
+      "settings": {
+        "Blocks": [],
+        "MaxDistance": 1024.0
+      }
+    },
+    "CrystalESP": {
+      "enabled": true,
+      "settings": {
+        "MaxDistance": 1024.0
+      }
+    },
+    "HoleESP": { "enabled": false, "settings": {} },
+    "ElytraFinder": {
+      "enabled": true,
+      "settings": {
+        "Mode": "BOTH",
+        "MaxDistance": 1024.0
+      }
+    },
+
+    "ShardItemTimer": { "enabled": true, "settings": {} },
+    "SpawnerFinder": {
+      "enabled": true,
+      "settings": {
+        "Mode": "BOTH",
+        "MaxDistance": 1024.0
+      }
+    },
+    "FakeInventory": { "enabled": false, "settings": {} },
+    "RenderDistanceExploit": { "enabled": false, "settings": {} }
+  }
+}

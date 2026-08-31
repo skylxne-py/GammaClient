@@ -1,0 +1,73 @@
+plugins {
+	id "net.fabricmc.fabric-loom" version "${loom_version}"
+}
+
+version = project.mod_version
+group = project.maven_group
+
+base {
+	archivesName = project.archives_base_name
+}
+
+repositories {
+	// Add repositories to retrieve artifacts from in here.
+	// You should only use this when depending on other mods because
+	// Loom adds the essential maven repositories to download Minecraft and libraries from automatically.
+}
+
+loom {
+	// Gamma is client-only (see fabric.mod.json "environment": "client"), so there is
+	// no common/server source set to split from client code — everything lives in main.
+	accessWidenerPath = file("src/main/resources/gamma.accesswidener")
+}
+
+dependencies {
+	// To change the versions see the gradle.properties file
+	minecraft "com.mojang:minecraft:${project.minecraft_version}"
+	implementation "net.fabricmc:fabric-loader:${project.loader_version}"
+
+	implementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
+
+	// Phase 5 chunk DB. `include` performs Fabric Loom's Jar-in-Jar: sqlite-jdbc (and its
+	// bundled native SQLite libraries) is nested inside our own jar and loaded onto the
+	// classpath by Fabric Loader at runtime as a non-mod nested jar — no separate install step.
+	implementation "org.xerial:sqlite-jdbc:${project.sqlite_jdbc_version}"
+	include "org.xerial:sqlite-jdbc:${project.sqlite_jdbc_version}"
+
+	testImplementation platform("org.junit:junit-bom:${project.junit_version}")
+	testImplementation "org.junit.jupiter:junit-jupiter"
+	testRuntimeOnly "org.junit.platform:junit-platform-launcher"
+	// Explicit rather than relying on it transiting in from `implementation` — the chunk
+	// classifier fixture tests parse JSON directly and shouldn't depend on Loom's source-set
+	// wiring quirks to see it.
+	testImplementation "com.google.code.gson:gson:2.11.0"
+}
+
+test {
+	useJUnitPlatform()
+}
+
+processResources {
+	def version = project.version
+	inputs.property "version", version
+
+	filesMatching("fabric.mod.json") {
+		expand "version": version
+	}
+}
+
+tasks.withType(JavaCompile).configureEach {
+	it.options.release = 25
+}
+
+java {
+
+	sourceCompatibility = JavaVersion.VERSION_25
+	targetCompatibility = JavaVersion.VERSION_25
+}
+
+jar {
+	from("LICENSE") {
+		rename { "${it}_${base.archivesName.get()}" }
+	}
+}
