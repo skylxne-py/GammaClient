@@ -28,27 +28,27 @@ install.
 Opened with the ClickGUI (default <kbd>Right Shift</kbd>, rebindable in settings), or
 `.toggle <module>` in chat. Full command reference: `.help` in-game.
 
-**Render** — Xray, Fullbright, NoRender (granular toggles for fog, rain, snow, screen overlays,
+**Render:** Xray, Fullbright, NoRender (granular toggles for fog, rain, snow, screen overlays,
 hurt cam, view bobbing, armor and more), Ambience (custom sky/fog/weather), Zoom, Freecam,
 Freelook, ViewModel, BlockHighlight, Trajectories, Chams, Tracers, NameTag.
 
-**ESP** — EntityESP, PlayerESP (nametags, health, armor, ping), ItemESP, StorageESP (chests,
+**ESP:** EntityESP, PlayerESP (nametags, health, armor, ping), ItemESP, StorageESP (chests,
 barrels, shulkers, hoppers, furnaces — the core base-finding tool), BlockESP (arbitrary block list
 with incremental scanning), LogoutSpots (tracks where players vanish), Breadcrumbs (player trails).
 
-**World** — NewChunks (new-chunk detection via a pluggable classifier pipeline, see
+**World:** NewChunks (new-chunk detection via a pluggable classifier pipeline, see
 `docs/CLASSIFIERS.md`), StashFinder (automatic stash scoring across the logged chunk database),
 Waypoints (per-server, per-dimension, Overworld/Nether conversion, Xaero and Lunar import).
 
-**Base Hunting** — modules that exist specifically to find other people's builds: SusChunkFinder
+**Base Hunting:** modules that exist specifically to find other people's builds: SusChunkFinder
 (chunks whose underground contains blocks that don't occur there naturally), CrystalESP, HoleESP,
 ElytraFinder (item frames with an elytra in them).
 
-**DonutSMP** — grouped by server rather than by function, because these depend on one server's
+**DonutSMP:** grouped by server rather than by function, because these depend on one server's
 specific mechanics and are noise everywhere else: ShardItemTimer, SpawnerFinder, FakeInventory,
 RenderDistanceExploit.
 
-**Misc** — AutoReconnect, AutoSign, BetterTooltips (shulker contents, map preview, NBT),
+**Misc:** AutoReconnect, AutoSign, BetterTooltips (shulker contents, map preview, NBT),
 NameProtect (blur your own name for screenshots), FakeCoordinates, ScoreboardEditor, Spotify,
 DiscordRPC (off by default).
 
@@ -60,23 +60,21 @@ DiscordRPC (off by default).
 <td width="50%"><img src="docs/images/xray-esp-underground.png" alt="A container picked out through deepslate at depth"></td>
 </tr>
 <tr>
-<td><sub>Inside the same kind of build — containers coloured by type, item frames flagged, tracers
-running to everything still in range.</sub></td>
-<td><sub>Xray and ESP at depth: a single stashed container picked out through untouched deepslate,
-with the surface visible above it.</sub></td>
+<td><sub>Media base found in the early phase of development.</sub></td>
+<td><sub>Skelly stash found with the SpawnerFinder module, early development as well.</sub></td>
 </tr>
 </table>
 
 ## Other features
 
-- **Account switcher** — real Microsoft OAuth sign-in, reachable from the title screen and the
+- **Account switcher:** real Microsoft OAuth sign-in, reachable from the title screen and the
   server list. Tokens are stored encrypted (AES-256-GCM) under `gamma/`. See
   [Account switcher](#account-switcher) below for what that encryption does and does not protect.
-- **ClickGUI** — rounded, animated, with fuzzy search across all categories.
-- **HUD** — draggable element editor.
-- **Chunk map overlay** — renders the logged chunk database.
+- **ClickGUI:** rounded, animated, with fuzzy search across all categories.
+- **HUD:** draggable element editor.
+- **Chunk map overlay:** renders the logged chunk database.
 - **Per-server config profiles**, plus named configs you can bind to a server address.
-- **A bundled example config** — "DonutSMP (Example)", installed into `gamma/configs/` on first
+- **A bundled example config:** "DonutSMP (Example)", installed into `gamma/configs/` on first
   run and bound to `donutsmp.net`. Load it from the ClickGUI's Configs screen to see a full
   base-hunting setup rather than starting from an empty list. Delete it and it stays deleted.
 
@@ -110,8 +108,8 @@ produces — Gamma ships as a mod, not as a library, so there is no sources jar.
 
 ## Documentation
 
-- `docs/CLASSIFIERS.md` — the new-chunk classifier pipeline
-- `docs/COMPAT.md` — known third-party mod interactions
+- `docs/CLASSIFIERS.md`: the new-chunk classifier pipeline
+- `docs/COMPAT.md`: known third-party mod interactions
 
 ## License
 
