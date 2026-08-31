@@ -3,9 +3,6 @@
 A client-side Fabric mod for Minecraft Java Edition focused on rendering, world visualization,
 and base/stash finding.
 
-**Scope:** visual and world-analysis features only. No combat modules, no griefing automation, no
-movement cheats beyond Freecam. That is a deliberate boundary, not a to-do list.
-
 ![StorageESP and tracers through the walls of a buried storage complex](docs/images/storage-esp-base.png)
 
 <sub>StorageESP and tracers through solid rock: every chest, barrel and shulker in a buried complex,
