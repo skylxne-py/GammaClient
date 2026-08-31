@@ -13,7 +13,7 @@ sorted by container type, before breaking a single block.</sub>
 > implemented, and the DonutSMP group below is written against one specific server's mechanics.
 > Nothing here is an anticheat bypass or an automation tool, but that distinction is not one most
 > server rules make. Gamma is built for single-player, private servers you administer, and servers
-> that explicitly allow client-side visual mods. Check before you use it.
+> that explicitly allow client-side visual mods. Check before you use it. Usage in combination with OpSec is advised.
 
 ## Install
 
