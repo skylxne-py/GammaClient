@@ -3,8 +3,8 @@ package dev.gamma.chunks.classifier;
 import dev.gamma.chunks.model.ChunkObservation;
 
 /**
- * Palette entropy and packet size relative to a per-server-per-dimension baseline (the roadmap
- * pairs these two, and they're measured together here for the same reason: both are proxies for
+ * Palette entropy and packet size relative to a per-server-per-dimension baseline (the two are
+ * measured together here because both are proxies for
  * "how much distinct terrain/structure detail is packed into this chunk," and world-gen-fresh
  * chunks in a biome tend to sit at a fairly consistent point on that scale that a revisit
  * (already-modified by a player, or just naturally varied) tends to drift away from). Averages

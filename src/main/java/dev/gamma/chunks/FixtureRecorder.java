@@ -17,8 +17,7 @@ import java.nio.file.Path;
 /**
  * {@code .chunks record} fixture dump — raw {@link ChunkObservation}s plus the pipeline's own
  * verdict, written as JSON under {@code gamma/chunks/fixtures/<server>/} so a real test corpus
- * can be built from actual servers (roadmap: "dumps raw fixtures so we can build a test corpus
- * from real servers"). {@link ChunkObservation} is already plain data, so a dumped fixture file
+ * can be built from real play. {@link ChunkObservation} is already plain data, so a dumped fixture file
  * doubles as a ready-made {@code src/test/resources/fixtures} input — copy one in verbatim.
  *
  * <p>Lives only while {@code .chunks record} is toggled on — {@link ChunkObservationCollector}

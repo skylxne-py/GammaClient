@@ -16,9 +16,8 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * Third-party waypoint importers. Per the roadmap ("check first, don't guess at them"), both
- * formats below were checked against real documentation/community references before writing a
- * parser, rather than assumed — see the design notes (Phase 6) for the sources and, for
+ * Third-party waypoint importers. Both formats below were checked against real documentation/community references before writing a
+ * parser, rather than assumed — see the design notes for the sources and, for
  * Lunar's format specifically, the honest caveat about what wasn't independently confirmable in
  * this environment.
  */

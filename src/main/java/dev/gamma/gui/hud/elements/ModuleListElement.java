@@ -15,7 +15,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-/** The enabled-module list, sorted widest-first, each entry fading in/out as its module toggles — per the roadmap's HUD spec. */
+/** The enabled-module list, sorted widest-first, each entry fading in/out as its module toggles. */
 public final class ModuleListElement extends HudComponent {
 
 	private static final int LINE_GAP = 2;

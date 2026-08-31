@@ -36,7 +36,7 @@ import java.util.concurrent.ConcurrentHashMap;
  *
  * <p>Hooked from {@link ChunkObservationCollector#finalizeObservation} the same way {@code
  * NewChunks} is — a static {@link #instance}, since a core service has no DI path into a specific
- * module (see the design notes, Phase 4/5). On-demand scoring for {@code .chunks stashes}
+ * module (see the design notes). On-demand scoring for {@code .chunks stashes}
  * lives in {@code GammaCommands} directly against {@link StashScorer}, since that path needs no
  * live module state beyond these same weight settings.
  */

@@ -2,7 +2,7 @@ package dev.gamma.chunks.classifier;
 
 /**
  * Online mean/variance (Welford's algorithm) for one metric, calibrated per server as samples
- * arrive — the roadmap's "per-server baseline calibration and outlier rejection under lag" for
+ * arrive — per-server baseline calibration and outlier rejection under lag for
  * the generation-latency signal, reused by every other baseline-driven classifier too.
  *
  * <p>Scoring ({@link #zScore}) and calibration ({@link #update}) are deliberately separate calls

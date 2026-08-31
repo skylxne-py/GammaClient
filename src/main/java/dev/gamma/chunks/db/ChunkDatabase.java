@@ -29,7 +29,7 @@ import java.util.function.Consumer;
 
 /**
  * One SQLite file under {@code .minecraft/gamma/chunks/}, one per server (per the project's
- * "No blocking I/O on the render or client thread" and the roadmap's storage spec). Every
+ * "No blocking I/O on the render or client thread"). Every
  * operation is enqueued and drained through {@link GammaExecutor} — never called directly from
  * the client thread — but the queue+flag pair in {@link #drain}/{@link #drainLoop} guarantees
  * only one {@link GammaExecutor} worker ever touches the single JDBC {@link Connection} at a
@@ -61,7 +61,7 @@ public final class ChunkDatabase {
 	}
 
 	/**
-	 * {@code VACUUM} + {@code ANALYZE} (Phase 7 hardening — ".chunks compact" in
+	 * {@code VACUUM} + {@code ANALYZE} (".chunks compact" in
 	 * {@code GammaCommands}, {@code attended()}-gated since it's long-running on a big DB).
 	 * SQLite refuses {@code VACUUM} inside an explicit transaction, so unlike every other
 	 * operation here it can't be folded into {@link #drainLoop}'s batched commit — it's queued
@@ -174,7 +174,7 @@ public final class ChunkDatabase {
 		try {
 			Connection opened = DriverManager.getConnection("jdbc:sqlite:" + databaseFile);
 			// WAL + synchronous=NORMAL: standard SQLite hardening for a DB expected to grow into
-			// the hundreds of thousands of rows (Phase 7 — "verify query performance at 500k+
+			// the hundreds of thousands of rows ("verify query performance at 500k+
 			// logged chunks"). WAL lets readers (e.g. `.chunks query` while a batch is mid-write)
 			// proceed without blocking on writers; NORMAL trades the fully-durable fsync-per-commit
 			// guarantee for far fewer fsyncs, which is fine here since a lost chunk observation on

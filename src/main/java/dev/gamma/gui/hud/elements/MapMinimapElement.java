@@ -9,7 +9,7 @@ import dev.gamma.render.Renderer2D;
 import net.minecraft.client.gui.Font;
 
 /**
- * The corner-minimap presentation of the roadmap's "toggleable fullscreen and minimap corner"
+ * The corner-minimap presentation of the toggleable fullscreen/minimap-corner
  * chunk overlay (the fullscreen form is {@code gui.map.MapOverlayScreen}, opened via {@code
  * .gamma map}). Reuses the existing {@link HudComponent} framework wholesale — drag/anchor/scale
  * all come for free — rather than inventing a second draggable-overlay system; unlike the

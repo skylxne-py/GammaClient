@@ -6,7 +6,7 @@ import dev.gamma.gui.hud.SingleLineHudComponent;
 import dev.gamma.modules.misc.FakeCoordinates;
 import net.minecraft.world.level.Level;
 
-/** Position, plus the Overworld/Nether equivalent coordinate (the roadmap's "cross-dimension equivalent" toggle for waypoints reuses this ×8/÷8 math later in Phase 6). */
+/** Position, plus the Overworld/Nether equivalent coordinate (the waypoints cross-dimension toggle reuses this ×8/÷8 math later). */
 public final class CoordinatesElement extends SingleLineHudComponent {
 
 	public CoordinatesElement() {

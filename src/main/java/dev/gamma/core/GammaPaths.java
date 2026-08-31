@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
-/** Shared {@code .minecraft/gamma/} layout — config profiles here, the Phase 5 chunk DBs under {@code chunks/}. */
+/** Shared {@code .minecraft/gamma/} layout — config profiles here, the chunk DBs under {@code chunks/}. */
 public final class GammaPaths {
 
 	private GammaPaths() {

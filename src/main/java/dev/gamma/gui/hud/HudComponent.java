@@ -6,7 +6,7 @@ import net.minecraft.client.gui.Font;
 /**
  * One draggable HUD overlay element. Position is an {@link Anchor} plus a pixel offset from it
  * (not raw screen coordinates) so elements stay put — and can snap to edges — across resolution
- * changes, per the roadmap's HUD editor requirements.
+ * changes, which is what the HUD editor needs.
  */
 public abstract class HudComponent {
 

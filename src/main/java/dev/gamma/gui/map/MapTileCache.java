@@ -12,12 +12,12 @@ import java.util.concurrent.ConcurrentHashMap;
 /**
  * Per-viewport cache of {@link ChunkRecord}s backing the map overlay/minimap. Roadmap: "Renders
  * from a cached tile texture, rebuilt incrementally — never re-query the DB per frame." There is
- * no real GPU texture here (see the design notes, Phase 6) — each visible chunk cell is
+ * no real GPU texture here (see the design notes) — each visible chunk cell is
  * still one {@code Renderer2D.fill()} per frame, same as every other Renderer2D-drawn shape in
  * this codebase. What this class actually caches is the *data* driving those fills: a bounding-box
  * query only re-runs when the visible region moves outside the last-queried area (padded, so
- * panning a little doesn't immediately re-trigger one), which is the real per-frame cost the
- * roadmap line is protecting against — hitting SQLite every frame, not the fill() calls themselves.
+ * panning a little doesn't immediately re-trigger one), which is the real per-frame cost
+ * being guarded against — hitting SQLite every frame, not the fill() calls themselves.
  */
 public final class MapTileCache {
 

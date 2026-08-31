@@ -18,7 +18,7 @@ import net.minecraft.client.multiplayer.ClientLevel;
 /**
  * Adapts Fabric's tick/chunk/level/render events onto Gamma's own {@link EventBus} — modules
  * and other core systems subscribe to the bus, not to Fabric directly, so a future Fabric API
- * change (or the Phase 2 renderer wanting a different render stage) touches one file. Commands
+ * change (or the renderer wanting a different render stage) touches one file. Commands
  * and the client-stopping shutdown hook still talk to Fabric API directly; this covers only
  * the six event categories the EventBus exposes (tick, world render extract/render, packet
  * receive, key input, world load/unload, chunk receive).

@@ -3,7 +3,7 @@ package dev.gamma.chunks.classifier;
 import dev.gamma.chunks.model.ChunkObservation;
 
 /**
- * Stand-in for the roadmap's "block-update packet flags" candidate signal. Verified against the
+ * Stand-in for the block-update-packet-flags candidate signal. Verified against the
  * real 26.2 jar ({@code javap} on {@code ClientboundBlockUpdatePacket} /
  * {@code ClientboundSectionBlocksUpdatePacket}) that neither packet exposes per-block edit flags
  * on the wire in this version — that field existed in much older protocol versions and is gone

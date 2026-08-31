@@ -4,9 +4,8 @@ import dev.gamma.util.ColorUtil;
 
 /**
  * The single accent color driving the whole ClickGUI/HUD, plus derived hover/active shades and
- * the fixed neutral palette structural chrome is drawn in. Per the roadmap: "a single accent
- * color drives the whole theme, user-configurable, with derived hover/active shades computed
- * rather than hardcoded" — only {@link #accent} is stored; everything else is a function of it.
+ * the fixed neutral palette structural chrome is drawn in. A single user-configurable accent drives the whole
+ * theme, with hover/active shades derived rather than hardcoded — only {@link #accent} is stored; everything else is a function of it.
  */
 public final class Theme {
 

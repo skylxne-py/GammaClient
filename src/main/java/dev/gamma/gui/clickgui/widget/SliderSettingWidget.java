@@ -15,8 +15,7 @@ import java.util.function.DoubleUnaryOperator;
 
 /**
  * A smooth, click-and-drag slider for {@link DoubleSetting}/{@link IntSetting}. The thumb
- * scales up slightly on grab and the live value floats above it in a small label, per the
- * roadmap's GUI aesthetic direction.
+ * scales up slightly on grab and the live value floats above it in a small label.
  */
 public final class SliderSettingWidget extends SettingWidget {
 

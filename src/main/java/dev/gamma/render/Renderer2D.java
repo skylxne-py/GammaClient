@@ -11,7 +11,7 @@ import java.util.Deque;
 /**
  * GUI-space drawing. Wraps a single frame's {@link GuiGraphicsExtractor} (the {@code
  * GuiGraphics} successor in 26.2 — obtained from {@code Screen.extractRenderState}, wired up
- * once the ClickGUI/HUD exist in Phase 3).
+ * once the ClickGUI/HUD exist).
  *
  * <p>Rounded rects and circles are real geometry via analytic-coverage scanline
  * rasterization — many {@code fill()} calls, with the boundary pixel of each scanline

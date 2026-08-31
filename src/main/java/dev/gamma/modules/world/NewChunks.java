@@ -27,12 +27,12 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * The presentation half of Phase 5 — {@link dev.gamma.chunks.ChunkObservationCollector} is the
- * always-on logging engine (roadmap: "every chunk data packet received gets recorded"); this
+ * The presentation half of chunk logging — {@link dev.gamma.chunks.ChunkObservationCollector} is the
+ * always-on logging engine (every chunk data packet received gets recorded); this
  * module only draws whatever it's told about via {@link #onClassified}, and owns the
  * user-configurable notable-block list the collector reads back through {@link #notableBlocks()}
  * (mirrors the {@code Xray}/{@code Fullbright}-style static-instance seam documented in
- * the design notes Phase 4 — the collector is a core service, not wired through the
+ * the design notes — the collector is a core service, not wired through the
  * event bus, so it has no other way to reach a live module's settings).
  */
 public final class NewChunks extends Module {

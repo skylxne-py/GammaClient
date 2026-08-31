@@ -11,7 +11,7 @@ import net.minecraft.world.item.ItemStack;
 import java.util.ArrayList;
 import java.util.List;
 
-/** Worn armor with durability bars (vanilla's own {@code itemDecorations} draws the bar) — the roadmap's "armor + durability" HUD element. */
+/** Worn armor with durability bars (vanilla's own {@code itemDecorations} draws the bar). */
 public final class ArmorElement extends HudComponent {
 
 	private static final EquipmentSlot[] SLOTS = {EquipmentSlot.HEAD, EquipmentSlot.CHEST, EquipmentSlot.LEGS, EquipmentSlot.FEET};

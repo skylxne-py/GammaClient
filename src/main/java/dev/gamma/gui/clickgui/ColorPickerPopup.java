@@ -12,7 +12,7 @@ import java.util.function.IntConsumer;
 
 /**
  * The shared color picker overlay: HSV square (saturation/value), a hue strip, an alpha strip,
- * and a hex input — per the roadmap's "proper color picker" requirement. Takes a plain getter/
+ * and a hex input— a full picker rather than a hex field alone. Takes a plain getter/
  * setter pair rather than a {@code ColorSetting} directly so both the ClickGUI's {@code
  * ColorSettingWidget} and the HUD editor's per-element color control can share it. Owned and
  * positioned by whichever screen opens it, which routes input to it ahead of everything else

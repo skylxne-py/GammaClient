@@ -51,7 +51,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
  * Records where a nearby player entity disappears — the strongest, simplest signal a client can
  * observe for "this player disconnected" without a dedicated disconnect packet to key off of.
  * A ghost box + timestamped label marks the spot, persisted as JSON per server (this predates
- * the Phase 5 chunk DB, so it gets its own tiny file rather than a shared store).
+ * the chunk DB, so it gets its own tiny file rather than a shared store).
  */
 public final class LogoutSpots extends Module {
 

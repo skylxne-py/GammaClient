@@ -12,7 +12,7 @@ import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 
 /**
- * Optional, off by default (the project conventions/roadmap) — a module base already starts disabled, so no
+ * Optional, off by default — a module base already starts disabled, so no
  * extra flag is needed for that. See {@link DiscordIpcClient} for why this hand-rolls the IPC
  * protocol instead of pulling in a Discord SDK dependency.
  */

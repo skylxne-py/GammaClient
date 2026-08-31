@@ -26,7 +26,7 @@ import net.minecraft.resources.Identifier;
 import net.minecraft.world.phys.Vec3;
 
 /**
- * The rendering half of Phase 6's waypoint system — {@link WaypointStore} owns the data, this
+ * The rendering half of the waypoint system — {@link WaypointStore} owns the data, this
  * draws it: a vertical beacon beam, a floating name+distance label (both real 3D, drawn from
  * {@link WorldRenderExtractEvent} like every other Renderer3D user), and an on-screen edge
  * indicator for waypoints currently off-screen. The edge indicator is registered as its own

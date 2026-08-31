@@ -48,8 +48,8 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
- * The always-on engine behind Phase 5: "every chunk data packet received gets recorded" (per
- * the roadmap), not something a module toggles. {@link dev.gamma.modules.world.NewChunks} is
+ * The always-on engine behind chunk logging: every chunk data packet received gets recorded,
+ * by design, not something a module toggles. {@link dev.gamma.modules.world.NewChunks} is
  * the opt-in *presentation* layer on top of this — this class runs for the lifetime of a world
  * connection and feeds every logged chunk into whichever server's {@link ChunkDatabase}.
  *
@@ -71,11 +71,11 @@ import java.util.concurrent.atomic.AtomicInteger;
 public final class ChunkObservationCollector {
 
 	/**
-	 * Phase 6's map overlay ({@code gui.map.MapTileCache}) needs to reach this collector's live
+	 * the map overlay ({@code gui.map.MapTileCache}) needs to reach this collector's live
 	 * {@link ChunkDatabase} with no constructor-injection path (it's built from a {@code
 	 * HudComponent}/{@code Screen}, neither of which takes core-service dependencies) — same
 	 * static-reachability seam already used the other direction for {@code NewChunks}/{@code
-	 * StashFinder} (see the design notes, Phase 4/5/6).
+	 * StashFinder} (see the design notes).
 	 */
 	public static volatile ChunkObservationCollector instance;
 

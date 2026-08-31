@@ -8,7 +8,7 @@ import dev.gamma.util.ColorUtil;
 import net.minecraft.client.gui.Font;
 import net.minecraft.client.input.MouseButtonEvent;
 
-/** A pill switch with a sliding thumb — the project conventions/roadmap: "not checkboxes." */
+/** A pill switch with a sliding thumb— not checkboxes. */
 public final class ToggleSwitchWidget extends SettingWidget {
 
 	private static final int TRACK_WIDTH = 30;

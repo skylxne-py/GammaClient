@@ -17,7 +17,7 @@ import java.util.Map;
  * proximity is approximated as "how storage-dense are the *other* chunks in this same pool that
  * happen to be nearby", which is honest about only seeing candidates that already cleared the
  * density bar, not a true full-DB radius search. Documented as a deliberate scope trade in
- * the design notes (Phase 6): a real neighbor search would mean one DB round trip per
+ * the design notes: a real neighbor search would mean one DB round trip per
  * candidate, which doesn't fit "surface the top N" as a single cheap command.
  *
  * <p>Which container types count at all is {@link StashWeights#countedTypes}, applied here rather

@@ -9,7 +9,7 @@ import java.util.concurrent.atomic.AtomicLong;
 
 /**
  * Rolling per-module, per-event-type timing captured for free by every {@link Module#listen}
- * subscription. This is the closest thing to "profile the render path" (Phase 7) that's
+ * subscription. This is the closest thing to "profile the render path" that's
  * possible without a live game client to attach a real sampling profiler to — see
  * the design notes for why actual FPS-cost numbers aren't fabricated here. Exposed in-game via
  * {@code .gamma profile}, so a developer with a running client can point at whichever module the

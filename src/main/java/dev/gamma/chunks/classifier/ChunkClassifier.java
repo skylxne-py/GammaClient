@@ -3,8 +3,8 @@ package dev.gamma.chunks.classifier;
 import dev.gamma.chunks.model.ChunkObservation;
 
 /**
- * One independent signal in the pluggable pipeline (roadmap: "never hardcode a single
- * technique — servers patch them and I want to swap strategies without surgery"). Pure and
+ * One independent signal in the pluggable pipeline: never one hardcoded
+ * technique — servers patch them, and strategies have to stay swappable without surgery. Pure and
  * Minecraft-free by design, so every implementation is unit-testable against a hand-built
  * {@link ChunkObservation} — no running game needed.
  */

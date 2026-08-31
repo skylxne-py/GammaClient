@@ -63,14 +63,14 @@ final class ChunkSchema {
 					""");
 			// The (dimension, x, z) primary key is already indexed implicitly; storage_count and
 			// classification are indexed separately since `.chunks query`/stash-style filtering
-			// (Phase 6) hits those directly rather than the key columns.
+			// hits those directly rather than the key columns.
 			statement.execute("CREATE INDEX IF NOT EXISTS idx_chunks_storage_count ON chunks(storage_count)");
 			statement.execute("CREATE INDEX IF NOT EXISTS idx_chunks_classification ON chunks(classification)");
 		}
 	}
 
 	/**
-	 * Phase 7 hardening — added after auditing {@code ChunkQuery} usage at scale
+	 * Hardening: added after auditing {@code ChunkQuery} usage at scale
 	 * (the design notes): {@code .chunks query}/{@code stashes} always filter by dimension
 	 * together with either {@code storage_count} or {@code last_seen}, which the v1 single-column
 	 * indices can't serve as one index scan. {@code last_seen} itself (age filtering) had no

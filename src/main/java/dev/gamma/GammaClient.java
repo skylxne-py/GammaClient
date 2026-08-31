@@ -88,12 +88,12 @@ public final class GammaClient implements ClientModInitializer {
 		guiConfig.load(theme);
 		ClickGuiOpener clickGuiOpener = new ClickGuiOpener(registry, theme, guiConfig, hudManager, configManager, settings, Gamma.EVENT_BUS);
 
-		// Phase 5 — always-on chunk logging, independent of whether NewChunks (the rendering
+		// always-on chunk logging, independent of whether NewChunks (the rendering
 		// module) is toggled on; see ChunkObservationCollector's own doc comment.
 		ChunkObservationCollector chunkObservationCollector = new ChunkObservationCollector(Gamma.EVENT_BUS);
 		chunkObservationCollector.install();
 
-		// Phase 6 — waypoints are an always-on core service too, same reasoning as chunk logging:
+		// waypoints are an always-on core service too, same reasoning as chunk logging:
 		// they must persist and render regardless of which module happens to be toggled.
 		WaypointStore waypointStore = new WaypointStore();
 		waypointStore.install(Gamma.EVENT_BUS);

@@ -47,7 +47,7 @@ public final class ConfigManager {
 	private final Gson gson = new GsonBuilder().setPrettyPrinting().create();
 	private volatile ScheduledFuture<?> pendingSave;
 
-	/** Static since chunk logging (Phase 5) keys its own per-server DB files off the same identity. */
+	/** Static since chunk logging keys its own per-server DB files off the same identity. */
 	public static String currentProfileKey(Minecraft client) {
 		if (client.hasSingleplayerServer()) {
 			return "singleplayer";

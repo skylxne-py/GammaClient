@@ -117,7 +117,7 @@ public abstract class Module {
 
 	/**
 	 * Subscribes to {@link Gamma#EVENT_BUS}, wrapping {@code listener} so a thrown exception is
-	 * caught, this module is disabled, and the failure is reported in chat (Phase 7 hardening)
+	 * caught, this module is disabled, and the failure is reported in chat
 	 * instead of propagating into the tick/render call stack and crashing the client. Every
 	 * module should subscribe through this rather than {@code Gamma.EVENT_BUS.subscribe}
 	 * directly so that guarantee is automatic, not opt-in.

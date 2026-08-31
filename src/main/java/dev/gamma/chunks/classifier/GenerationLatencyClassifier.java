@@ -5,9 +5,9 @@ import dev.gamma.chunks.model.ChunkObservation;
 /**
  * Time between a chunk position entering render distance and its packet arriving. Freshly
  * generated chunks measurably take longer server-side than chunks served from region files —
- * the roadmap's primary candidate signal. Scored as a z-score against a per-server-per-dimension
- * {@link RollingBaseline}, which is where the "calibration and outlier rejection under lag" the
- * roadmap asks for actually happens (see {@link RollingBaseline}).
+ * the primary candidate signal. Scored as a z-score against a per-server-per-dimension
+ * {@link RollingBaseline}, which is where calibration and outlier rejection under lag
+ * actually happen (see {@link RollingBaseline}).
  */
 public final class GenerationLatencyClassifier implements ChunkClassifier {
 

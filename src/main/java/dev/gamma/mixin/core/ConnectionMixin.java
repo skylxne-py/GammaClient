@@ -13,7 +13,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 /**
  * No Fabric API event fires for a generic, any-type incoming packet — {@code ClientPlayNetworking}
  * only covers registered custom-payload channels, not vanilla packets like block/chunk updates
- * the Phase 5 classifiers need to observe. {@code channelRead0} is the one choke point every
+ * the classifiers need to observe. {@code channelRead0} is the one choke point every
  * inbound packet passes through before dispatch, so it's the mixin target.
  */
 @Mixin(Connection.class)

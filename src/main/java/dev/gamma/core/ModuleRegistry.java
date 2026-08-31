@@ -59,7 +59,7 @@ public final class ModuleRegistry {
 	private final Map<String, Module> byName = new HashMap<>();
 
 	public void registerAll() {
-		// Phase 4 — ESP group
+		// ESP group
 		register(new EntityESP());
 		register(new PlayerESP());
 		register(new ItemESP());
@@ -68,7 +68,7 @@ public final class ModuleRegistry {
 		register(new LogoutSpots());
 		register(new Breadcrumbs());
 
-		// Phase 4 — Render group
+		// Render group
 		register(new Xray());
 		register(new Fullbright());
 		register(new NoRender());
@@ -83,7 +83,7 @@ public final class ModuleRegistry {
 		register(new Tracers());
 		register(new NameTag());
 
-		// Phase 4 — Misc group
+		// Misc group
 		register(new AutoReconnect());
 		register(new AutoSign());
 		register(new BetterTooltips());
@@ -93,10 +93,10 @@ public final class ModuleRegistry {
 		register(new ScoreboardEditor());
 		register(new Spotify());
 
-		// Phase 5 — chunk logging and new-chunk detection
+		// chunk logging and new-chunk detection
 		register(new NewChunks());
 
-		// Phase 6 — waypoints, map overlay, stash scoring
+		// waypoints, map overlay, stash scoring
 		register(new WaypointsModule());
 		register(new StashFinder());
 

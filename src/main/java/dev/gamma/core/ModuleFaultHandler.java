@@ -7,7 +7,7 @@ import net.minecraft.network.chat.Component;
 
 /**
  * Central catch for exceptions escaping a module's event handlers — every subscription made
- * through {@link Module#listen} routes here. Per the project conventions/Phase 7 hardening: a module that
+ * through {@link Module#listen} routes here. Hardening rule: a module that
  * throws gets caught, disabled, and reported in chat rather than crashing the client.
  */
 final class ModuleFaultHandler {
