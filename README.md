@@ -6,6 +6,11 @@ and base/stash finding.
 **Scope:** visual and world-analysis features only. No combat modules, no griefing automation, no
 movement cheats beyond Freecam. That is a deliberate boundary, not a to-do list.
 
+![StorageESP and tracers through the walls of a buried storage complex](docs/images/storage-esp-base.png)
+
+<sub>StorageESP and tracers through solid rock: every chest, barrel and shulker in a buried complex,
+sorted by container type, before breaking a single block.</sub>
+
 > **Using this on a multiplayer server is very likely against that server's rules.** ESP, X-ray and
 > Freecam are visible-advantage mods on essentially every server regardless of how they're
 > implemented, and the DonutSMP group below is written against one specific server's mechanics.
@@ -49,6 +54,21 @@ RenderDistanceExploit.
 **Misc** — AutoReconnect, AutoSign, BetterTooltips (shulker contents, map preview, NBT),
 NameProtect (blur your own name for screenshots), FakeCoordinates, ScoreboardEditor, Spotify,
 DiscordRPC (off by default).
+
+## Showcase
+
+<table>
+<tr>
+<td width="50%"><img src="docs/images/storage-esp-interior.png" alt="Containers highlighted by type inside a base"></td>
+<td width="50%"><img src="docs/images/xray-esp-underground.png" alt="A container picked out through deepslate at depth"></td>
+</tr>
+<tr>
+<td><sub>Inside the same kind of build — containers coloured by type, item frames flagged, tracers
+running to everything still in range.</sub></td>
+<td><sub>Xray and ESP at depth: a single stashed container picked out through untouched deepslate,
+with the surface visible above it.</sub></td>
+</tr>
+</table>
 
 ## Other features
 
