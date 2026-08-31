@@ -78,10 +78,10 @@ import java.util.function.BooleanSupplier;
  * and the user still approves the request in their own browser. It is compiled in, so no user ever
  * has to supply one; {@code MsaClientId} exists only as an escape hatch if Microsoft refuses it.
  *
- * <p><strong>Verified against Microsoft:</strong> that the legacy id rejects a loopback redirect,
- * which is what forced the manual path. <strong>Still unverified:</strong> everything after the
- * authorize request on the legacy stack — no live sign-in has completed. The Azure path is
- * documented behaviour throughout and is the one to prefer if a registration is acceptable.
+ * <p><strong>Verified against Microsoft:</strong> the legacy id rejects a loopback redirect, which
+ * is what forced the manual paste-back path, and that path has since been confirmed to complete a
+ * sign-in. The Azure path is documented behaviour throughout but has not been exercised here; it
+ * is the one to prefer if a registration is acceptable.
  */
 public final class MsaAuth {
 

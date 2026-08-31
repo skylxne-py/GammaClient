@@ -1,6 +1,6 @@
 # Gamma — Chunk classifiers
 
-Phase 5's new-chunk detection is a pluggable pipeline (`dev.gamma.chunks.classifier`): each
+New-chunk detection is a pluggable pipeline (`dev.gamma.chunks.classifier`): each
 `ChunkClassifier` looks at one `ChunkObservation` — a plain-data snapshot with no Minecraft types
 in it, built by `ChunkObservationCollector` from real packets and chunk state — and returns a vote
 in `[-1, 1]` (positive = "looks freshly generated"), or `NaN` to abstain. `ClassifierPipeline`
@@ -8,21 +8,19 @@ combines whichever classifiers had an opinion into one weighted confidence score
 
 **Important limitation, stated up front:** every classifier below was implemented against real,
 verified 26.2 APIs (checked with `javap` against the actual mapped jar, not assumed — see the
-per-classifier notes and the design notes), and covered by unit tests using synthetic data.
-None of them have been empirically measured for real-world accuracy against a live server,
-because this environment has no way to launch Minecraft and connect to one. The roadmap asks to
-"implement and then *empirically validate* — do not assume any of these work." Only half of that
-happened here. Treat every weight and threshold below as an untested starting point, run
-`.chunks record` on a real server to build a fixture corpus, and revisit this document once
-there's real accuracy data to report (same caveat already on record for `DiscordRPC` in the
-Phase 4 decisions log — untested-in-this-environment, flagged rather than silently assumed good).
+per-classifier notes), and covered by unit tests using synthetic data.
+None of them have been empirically measured for real-world accuracy against a live server.
+Implementation is only half the job; validation is the other half, and it has not happened yet.
+Treat every weight and threshold below as an untested starting point, run `.chunks record` on a
+real server to build a fixture corpus, and revisit this document once there is real accuracy data
+to report.
 
 ## The pipeline
 
 `ClassifierPipeline.standard()` wires up all six classifiers below. `ClassifierContext` gives each
 one access to `RollingBaseline`s (Welford's online mean/variance, per server+dimension+metric,
-`BaselineStore`) — this is where the roadmap's "per-server baseline calibration and outlier
-rejection under lag" actually lives, shared by every classifier that needs one, not just
+`BaselineStore`) — this is where per-server baseline calibration and outlier
+rejection under lag actually live, shared by every classifier that needs one, not just
 generation-latency. A baseline abstains (returns NaN from `zScore`) until it has seen 8 samples,
 and rejects (doesn't fold in) any sample more than 5 standard deviations from the current mean
 once warmed up, so one lag spike doesn't wreck calibration for the rest of the session.
@@ -45,7 +43,7 @@ rather than picking an arbitrary default).
 
 ### Generation latency
 
-The roadmap's primary candidate. Vanilla never sends an explicit per-chunk "request" — the server
+The primary candidate. Vanilla never sends an explicit per-chunk "request" — the server
 streams chunks as the player moves — so `ChunkObservationCollector` proxies "requested" with "this
 chunk position entered render distance and isn't loaded yet" (tracked on `TickEvent`, only
 re-scanned when the player's own chunk position changes, not every tick). The gap between that
@@ -62,9 +60,9 @@ ticked chunk mostly doesn't. Counted via `PacketReceiveEvent` matching
 `ClientboundBlockUpdatePacket`/`ClientboundSectionBlocksUpdatePacket`, checking
 `BlockState.getFluidState()` (`!isEmpty() && !isSource()`) — both real, verified accessors.
 
-### Post-load update burst — a pivot from the roadmap's literal wording
+### Post-load update burst
 
-The roadmap lists "block-update packet flags on the section-blocks-update path" as a candidate.
+Block-update packet flags on the section-blocks-update path were the obvious candidate.
 Verified against the real 26.2 jar (`javap` on `ClientboundBlockUpdatePacket` and
 `ClientboundSectionBlocksUpdatePacket`): **neither packet exposes per-block edit flags on the wire
 in this version.** That field existed in much older protocol versions and is gone now — there is
@@ -87,7 +85,7 @@ this hypothesis is the shakiest of the six and hasn't been checked against real 
 
 ### Unrolled loot
 
-The roadmap's "block-entity presence inconsistencies," narrowed to one real, verified mechanic: a
+Block-entity presence inconsistencies, narrowed to one real, verified mechanic: a
 generated container (chest, barrel, hopper, ...) that nobody has opened yet stores an unresolved
 loot-table reference instead of real items —
 `RandomizableContainerBlockEntity#getLootTable() != null`, real vanilla behavior, verified against
@@ -98,7 +96,7 @@ chunk of a session, before any baseline has warmed up.
 
 ### Palette entropy + packet size
 
-The roadmap pairs these two explicitly. Both are proxies for "how much distinct terrain/structure
+These two are paired deliberately. Both are proxies for "how much distinct terrain/structure
 detail is packed into this chunk." Entropy is computed from real per-section palette occurrence
 counts (`PalettedContainer#count(CountConsumer)`, verified — a much cheaper read than a manual
 16×16×height block scan), normalized to `[0,1]` via `PaletteEntropy.normalizedShannonEntropy`
@@ -113,8 +111,7 @@ enough baseline data if only one does).
 `ClassifierPipeline`, and `PaletteEntropy`/`ContentHash` are unit-testable with zero game
 dependency — see `src/test/java/dev/gamma/chunks`. `ChunkObservationFixtureTest` runs the real
 `ClassifierPipeline.standard()` against fixture JSON under `src/test/resources/fixtures`; those two
-fixtures are **hand-authored idealized profiles**, not a real server capture — there was no live
-server available to record from in this environment. `.chunks record` dumps
+fixtures are **hand-authored idealized profiles**, not a real server capture. `.chunks record` dumps
 `{"observation": ..., "result": ...}` JSON in the exact shape `FixtureLoader` reads (just the
 `observation` object matters) — drop real captures into `src/test/resources/fixtures` as they
 become available and extend `ChunkObservationFixtureTest` rather than trusting the synthetic ones

@@ -17,9 +17,8 @@ import java.util.regex.Pattern;
 
 /**
  * Third-party waypoint importers. Both formats below were checked against real documentation/community references before writing a
- * parser, rather than assumed — see the design notes for the sources and, for
- * Lunar's format specifically, the honest caveat about what wasn't independently confirmable in
- * this environment.
+ * parser, rather than assumed. See the note on {@code parseLunar} for what could not be
+ * independently confirmed about Lunar's on-disk layout.
  */
 public final class WaypointImportExport {
 
@@ -82,8 +81,8 @@ public final class WaypointImportExport {
 	 * Lunar Client's {@code waypoints.json}: confirmed (Apollo mod-docs) that a waypoint object
 	 * carries {@code name}, a {@code location} with {@code world}/{@code x}/{@code y}/{@code z},
 	 * and a {@code color}; NOT independently confirmed here is the exact on-disk nesting depth
-	 * (server key -> world key -> waypoint name), since no real Lunar install was reachable in
-	 * this environment to inspect. This parser is deliberately shape-tolerant rather than
+	 * (server key -> world key -> waypoint name), since no real Lunar install was available to
+	 * inspect. This parser is deliberately shape-tolerant rather than
 	 * position-tolerant: it walks the whole JSON tree looking for objects that carry recognizable
 	 * waypoint fields (either flat {@code x}/{@code y}/{@code z}, or nested under {@code
 	 * location}), so it survives being wrong about the exact nesting. Flag any real-world import

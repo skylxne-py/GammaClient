@@ -19,9 +19,9 @@ import static com.mojang.blaze3d.platform.InputConstants.KEY_ESCAPE;
 import static com.mojang.blaze3d.platform.InputConstants.KEY_H;
 
 /**
- * The fullscreen chunk map overlay. Roadmap: grid of logged chunks colored by classification and
- * shaded by confidence, a heatmap mode, pan/zoom, coordinate readout under cursor, click to create
- * a waypoint, player position/facing, and other players' last-known positions. "Last known" here
+ * The fullscreen chunk map overlay: a grid of logged chunks coloured by classification and shaded
+ * by confidence, with a heatmap mode, pan/zoom, a coordinate readout under the cursor, click to
+ * create a waypoint, player position/facing, and other players' last-known positions. "Last known" here
  * just means "wherever they currently are while in render distance" — this screen has no separate
  * position history of its own to draw from (that's what {@code LogoutSpots} is for).
  */

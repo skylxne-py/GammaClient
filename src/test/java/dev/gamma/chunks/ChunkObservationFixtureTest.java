@@ -14,10 +14,9 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
  * Runs the real classifier pipeline against fixture dumps under {@code src/test/resources/fixtures}
- * — per the project's testing section ("Chunk classifier changes get unit tests against recorded
- * packet fixtures... Never regress classifier accuracy silently"). No live server was available
- * in this environment to build a real corpus (see {@code docs/CLASSIFIERS.md}), so these two
- * fixtures are hand-authored, idealized profiles rather than a genuine server capture — replace/
+ * so classifier changes cannot regress accuracy silently. No live server capture was available to
+ * build a real corpus from (see {@code docs/CLASSIFIERS.md}), so these two fixtures are
+ * hand-authored, idealized profiles rather than a genuine server capture — replace/
  * extend them with real {@code .chunks record} output as it becomes available, keeping the same
  * JSON shape ({@link ChunkObservation}'s field names) so this test doesn't need to change.
  */

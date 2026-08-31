@@ -10,8 +10,8 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Roadmap: "Score each chunk on storage-block density, unusual block-entity clustering, and
- * proximity to other high-scoring chunks." All three signals are computed over a candidate pool
+ * Scores each chunk on storage-block density, unusual block-entity clustering, and proximity to
+ * other high-scoring chunks. All three signals are computed over a candidate pool
  * the caller already fetched (typically the top-N-by-{@code storage_count} rows from {@code
  * ChunkDatabase#query}) rather than this class issuing its own per-chunk neighbor queries —
  * proximity is approximated as "how storage-dense are the *other* chunks in this same pool that

@@ -29,8 +29,8 @@ import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
- * Roadmap: "Tunable weights, defaults documented" and "auto-create waypoints above a user-set
- * threshold." A {@link Module} (not a plain core service like {@link ChunkObservationCollector})
+ * Tunable weights with documented defaults, and auto-created waypoints above a user-set
+ * threshold. A {@link Module} (not a plain core service like {@link ChunkObservationCollector})
  * because it's genuinely optional and its weights are exactly the kind of per-field settings the
  * module contract already gives us for free.
  *

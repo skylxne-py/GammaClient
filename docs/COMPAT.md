@@ -4,10 +4,8 @@ Third-party mod compatibility notes.
 
 ## Methodology
 
-Phase 7 asked for "a compatibility pass with a third-party rendering optimization mod if one
-is available for 26.2." There is no live Minecraft client in the environment these Phase 7
-changes were written in — no way to actually install a second mod jar alongside Gamma and
-launch the game. What follows instead is a static pass: every mixin target and every render
+These notes are a static pass rather than a playtest -- no second mod jar was installed alongside
+Gamma and launched. What follows is: every mixin target and every render
 seam Gamma touches, cross-referenced against what chunk-rendering optimization mods (Sodium,
 Embeddium, and similar forks, historically) are known to touch, to flag what's likely to
 conflict before anyone tries it for real.
@@ -81,7 +79,7 @@ pipeline and not anything derived from the chunk mesh. `Renderer2D` similarly on
 `GuiGraphicsExtractor` in GUI space. Neither seam is one a chunk-rendering optimization mod has
 any reason to touch, so ESP/HUD/waypoints should keep working regardless of what's installed
 alongside Gamma — this is the strongest guarantee in this document, precisely because it was
-architecturally chosen in Phase 2 to avoid exactly this class of conflict.
+an architectural choice made to avoid exactly this class of conflict.
 
 ## Manual verification checklist (do this with a real client + a real optimization mod)
 

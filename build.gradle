@@ -28,7 +28,7 @@ dependencies {
 
 	implementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
 
-	// Phase 5 chunk DB. `include` performs Fabric Loom's Jar-in-Jar: sqlite-jdbc (and its
+	// Chunk DB. `include` performs Fabric Loom's Jar-in-Jar: sqlite-jdbc (and its
 	// bundled native SQLite libraries) is nested inside our own jar and loaded onto the
 	// classpath by Fabric Loader at runtime as a non-mod nested jar — no separate install step.
 	implementation "org.xerial:sqlite-jdbc:${project.sqlite_jdbc_version}"
